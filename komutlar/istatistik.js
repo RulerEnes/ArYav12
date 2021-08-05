@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
         .replace("{ping1}", new Date().getTime() - message.createdTimestamp)
         .replace("{ping2}", client.ws.ping),true)
     .addField("» **Bellek kullanımı**",(process.memoryUsage().heapUsed / 1024 / 512).toFixed(2) + " MB",true)
-    .addField("» **Çalışma süresi**", seksizaman, true)
+    .addField("» **Çalışma süresi**", arya, true)
     .addField("» **Kullanıcılar**",client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString(), true)
     .addField("» **Sunucular**", client.guilds.cache.size.toLocaleString(), true)
     .addField("» **Kanallar**", client.channels.cache.size.toLocaleString(), true)
