@@ -9,7 +9,6 @@ const db = require('quick.db');
 const keep_alive = require('./keep_alive.js')
 
 var prefix = ayarlar.prefix;
-
 const log = message => {
 	console.log(`${message}`);
 };

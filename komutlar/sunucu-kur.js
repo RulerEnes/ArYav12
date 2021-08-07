@@ -78,6 +78,6 @@ exports.conf = {
 
 exports.help = {
   name: 'sunucu-kur',
-  description: 'Olduğunuz sunucuya kanal ve kategori kurar.',
+  description: 'Olduğunuz sunucuya kanal ve kategori kurar',
   usage: 'sunucukur'
 };

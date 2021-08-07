@@ -51,6 +51,6 @@ message.channel.send(embed)
 
 exports.help = {
   name: 'avatar',
-  description: '',
+  description: 'Sizin veya başkasının profil resmini atar (GIF olsa bile)',
   usage: 'avatar [@kullanıcı]'
 };

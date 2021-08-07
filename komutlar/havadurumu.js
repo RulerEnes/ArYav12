@@ -62,6 +62,6 @@ exports.conf = {
 
 exports.help = {
   name: "havadurumu",
-  description: "hava durumunu gösterir",
+  description: "Yazdığınız konumun hava durumunu atar",
   usage: "havadurumu"
 };

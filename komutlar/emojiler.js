@@ -15,7 +15,7 @@ exports.run = async(client, msg, args) => {
   let botembed = new Discord.MessageEmbed()
             .setColor(`#00f4fd`)
             .setDescription(staticEmotes + animEmotes)
-            .setAuthor(`${msg.guild.name} Sunucusu Emojileri`, msg.guild.iconURL())
+            .setAuthor(`${msg.guild.name} Sunucusunun Emojileri`, msg.guild.iconURL())
     .setFooter('© ArYa Software')           
         return msg.channel.send(botembed)
       } catch (err) {

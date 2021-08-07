@@ -18,6 +18,7 @@ const smsj = new Discord.MessageEmbed()
 **Özel mi:** ${bizimcocuklar.ozel}
 **Telaffuz:** ${bizimcocuklar.telaffuz}`)
 .setColor('#00f4fd')
+.setFooter('© ArYa Software')
 .setThumbnail(message.author.avatarURL())
 message.channel.send(smsj)
 } catch(e){

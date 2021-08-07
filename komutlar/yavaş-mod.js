@@ -17,5 +17,5 @@ exports.conf = {
  
 exports.help = {
  name: 'yavaşmod',
- usage: 'yavaşmod'
+ description: 'Olduğunuz kanala saniye cinsinden girdiğiniz sayıyı yavaş-mod olarak aktifleştirir'
 };

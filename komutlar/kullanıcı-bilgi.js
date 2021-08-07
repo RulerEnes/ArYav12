@@ -48,7 +48,7 @@ exports.conf = {
 
 exports.help = {
   name: 'kullanıcı-bilgi',
-  description: 'Etiketlediğiniz kullanıcı hakkında bilgi verir.',
+  description: 'Etiketlediğiniz kullanıcı hakkında bilgi verir',
   usage: 'kullanıcı-bilgi @Kullanıcı',
 
 };

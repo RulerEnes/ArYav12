@@ -2,9 +2,9 @@ const Discord = require('discord.js');
 const database = require('quick.db');
 
 exports.run = async (client, message, args) => {
-  if(!database.fetch(message.guild.id) || database.fetch(message.guild.id).length <= 0) return createEmbed('Daha önce hiç mesaj silinmemiş.', 'RED');
-  if(!args[0]) return createEmbed('Bir sayı belirtmelisin.', 'RED');
-  if(isNaN(args[0])) return createEmbed('Bir sayı belirtmelisin.', 'RED');
+  if(!database.fetch(message.guild.id) || database.fetch(message.guild.id).length <= 0) return createEmbed('Daha önce hiç mesaj silinmemiş.', '#00f4fd');
+  if(!args[0]) return createEmbed('Bir sayı belirtmelisin.', '#00f4fd');
+  if(isNaN(args[0])) return createEmbed('Bir sayı belirtmelisin.', '#00f4fd');
   if(args[0] > database.fetch(message.guild.id).length) args[0] = database.fetch(message.guild.id).length;
 
 
@@ -14,7 +14,7 @@ exports.run = async (client, message, args) => {
   .setColor('#00f4fd')
   .setDescription(silinenler.sort((a, b) => a.messageCREATEDAT - b.messageCREATEDAT).reverse().map(x => `**${x.authorTAG}**: ${x.messageCONTENT}`).slice(0, 50).join('\n'))
   .setTitle('İşte sunucunda son silinenler;');
-  if(embed.description.length > 1000) return createEmbed('Silinen mesajların arasında çok uzun bir mesaj bulunduğu için bunu gösteremiyorum.', 'RED');
+  if(embed.description.length > 1000) return createEmbed('Silinen mesajların arasında çok uzun bir mesaj bulunduğu için bunu gösteremiyorum.', '#00f4fd');
 
   return message.channel.send(embed);
 

@@ -18,7 +18,7 @@ exports.run = async (client, message, args) => {
 					.setColor('#00f4fd')
 					.addField('Bağlantı', args[0])
 					.addField('Sonuç', snc)
-					.setTimestamp()
+					.setFooter('© ArYa Software')
 			);
 		});
 	} else {

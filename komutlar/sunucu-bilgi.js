@@ -58,6 +58,6 @@ kategori: 'Sunucu'
 
 module.exports.help = {
     name: 'sunucu-bilgi',
-    description: 'Sunucu hakkında bilgi verir.',
+    description: 'Sunucu hakkında bilgi verir',
     usage: 'sunucu-bilgi'
 };

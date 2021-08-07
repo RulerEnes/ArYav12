@@ -74,6 +74,6 @@ exports.conf = {
 
 exports.help = {
     name: 'sayı-tahmin',
-  description: 'ArYa Bot rastgele rakam belirler ve siz o rakamı bulmaya çalışırsınız.',
+  description: 'ArYa Bot rastgele rakam belirler ve siz o rakamı bulmaya çalışırsınız',
   usage: 'sayı-tahmin'
 };

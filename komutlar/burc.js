@@ -27,6 +27,6 @@ exports.conf = {
 
 exports.help = {
   name: 'burc-yorumu',
-  description: "Günlük olarak değişen burç yorumları alırsınız.",
+  description: "Günlük olarak değişen burç yorumlarını atar API den dolayı geçcevap verir",
   usage: 'burc-yorumu '
 }

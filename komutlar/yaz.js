@@ -15,6 +15,6 @@ exports.conf = {
 
 exports.help = {
   name: 'yaz',
-  description: 'İstediğiniz şeyi bota yazdırır.',
+  description: 'Yazdığınız cümle/kelime/Sayıyı bot yazar',
   usage: 'yaz [yazdırmak istediğiniz şey]'
 };

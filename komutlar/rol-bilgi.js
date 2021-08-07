@@ -65,6 +65,6 @@ permLevel: 0
 };
 exports.help = { 
 name: "rolbilgi", 
-description: "Belirtilen rolün bilgilerini gösterir.", 
+description: "Etiketlediğiniz rolün bilgilerini gösterir", 
 usage: "rolbilgi [ rol/id ]" 
 };
