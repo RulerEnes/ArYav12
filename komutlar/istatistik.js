@@ -25,7 +25,7 @@ exports.run = async (client, message, args) => {
     .addField("» **CPU**",`\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``,true)
     .addField("» **Bit**", `\`${os.arch()}\``, true)
     .addField("» **İşletim Sistemi**", `\`\`${os.platform()}\`\``, true)
-    .addField("**» Bot Davet**"," [Davet Et](https://discordapp.com/oauth2/authorize?client_id=" + client.user.id + "&scope=bot&permissions=8)");
+    .addField("» Linkler", `[Davet Et](https://discord.com/oauth2/authorize?client_id=834763013248122910&scope=bot&permissions=4228906239)` + "** | **" + `[Destek Sunucusu](https://discord.gg/SNCWVbxpax)` + "** | **" + `[Top.gg Oy](https://top.gg/bot/834763013248122910/vote)`, false)
   return message.channel.send(istatistikler);
 };
 

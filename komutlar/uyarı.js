@@ -21,7 +21,7 @@ const syı = await data.fetch(`uyarı.${message.guild.id}.${kullanıcı.id}`)
 
 if(!reason) {
 await message.channel.send(`${kullanıcı}, uyarıldı!\nToplam uyarı sayısı: ${syı}`)
-await kullanıcı.send(`${kullanıcı}, merhaba! ${message.guild.name} sunucusunda sebepsiz bir şekilde uyarıldın. Dikkatli ol!`) 
+await kullanıcı.send(`${kullanıcı}, Merhaba! ${message.guild.name} sunucusunda sebepsiz bir şekilde uyarıldın. Dikkatli ol!`) 
 return}
 
 if(reason) {
