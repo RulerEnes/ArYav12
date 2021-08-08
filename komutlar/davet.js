@@ -11,7 +11,7 @@ message.channel.send(davet)
 };
 
 exports.conf = {
-  aliases: ['ArYa'],
+  aliases: ['davetlinki'],
   permLevel: 0,
   kategori: "Genel",
 };
