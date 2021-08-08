@@ -22,8 +22,8 @@ let everyone = message.guild.roles.cache.find(a => a.name === '@everyone');
 channel.updateOverwrite(everyone, { 'SEND_MESSAGES': false }, 'Locked by '+message.author.tag);
 channel.send(new Discord.MessageEmbed()
 .setColor('#00f4fd')
-.setTitle(channel.name+' has been Locked.')
-.setDescription(`Merhaba yetkili bu kanalı ${reasonn} sebebinden kilitledi. En kısa zamanda geri açacaklardır lütfen sabırlı ol ❤`));
+.setTitle(channel.name+' adlı kanal kilitlendi')
+.setDescription(`Merhaba yetkili bu kanalı ${reason} sebebinden kilitledi. En kısa zamanda geri açacaklardır lütfen sabırlı ol ❤`));
 
 };
 exports.conf = {
