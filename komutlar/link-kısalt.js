@@ -45,7 +45,6 @@ exports.conf = {
 	guildOnly: true,
 	aliases: ['linkkısalt', 'bağlantıkısalt', 'bağlantı-kısalt'],
 	permLevel: 0
-	kategori: 'Genel'
 }; 
 
 exports.help = {

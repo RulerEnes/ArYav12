@@ -34,7 +34,6 @@ exports.conf = {
   guildOnly: false,
   aliases: ["i"],
   permLevel: 0
-  kategori: 'Genel'
 };
 
 exports.help = {

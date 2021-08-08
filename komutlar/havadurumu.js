@@ -58,7 +58,6 @@ exports.conf = {
   guildOnly: false,
   aliases: ["hava-durumu", "hava"],
   permLevel: 0
-  kategori: 'Genel'
 };
 
 exports.help = {

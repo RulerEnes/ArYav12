@@ -64,7 +64,6 @@ exports.conf = {
 
     permLevel: 0
     
-    kategori: 'Sunucu'
 
 }
 
