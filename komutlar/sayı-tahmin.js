@@ -70,6 +70,7 @@ exports.conf = {
   guildOnly: true,
   aliases: ['sayıtahmini', 'sayıtahmin', 'sayı-tahmini'],
   permLevel: 0
+  kategori: 'Eğlence'
 };
 
 exports.help = {

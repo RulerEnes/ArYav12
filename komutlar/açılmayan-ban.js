@@ -147,6 +147,7 @@ exports.conf = {
     guildOnly: false,
     aliases: ['açılmayanban', 'aban'],
     permLevel: 0
+    kategori: 'Moderasyon'
 };
 
 exports.help = {

@@ -62,6 +62,7 @@ enabled: true,
 guildOnly: false, 
 aliases: [], 
 permLevel: 0
+kategori: 'Genel'
 };
 exports.help = { 
 name: "rolbilgi", 

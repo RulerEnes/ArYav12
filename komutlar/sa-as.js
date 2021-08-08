@@ -63,6 +63,8 @@ exports.conf = {
     aliases: [''],
 
     permLevel: 0
+    
+    kategori: 'Sunucu'
 
 }
 

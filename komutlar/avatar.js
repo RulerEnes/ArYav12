@@ -47,6 +47,7 @@ message.channel.send(embed)
   guildOnly: false,
   aliases: ['avatarım'],
   permLevel: 0
+  kategori: 'Genel'
 };
 
 exports.help = {

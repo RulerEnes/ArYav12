@@ -62,6 +62,7 @@ enabled: true,
 guildOnly: false,
 aliases: ['warn'],
 permLevel: 0,
+kategori: 'Moderasyon'
 }
 
 exports.help = {
