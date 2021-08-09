@@ -1,41 +1,54 @@
 const Discord = require('discord.js');
-const ayarlar = require('../ayarlar.json')
 
-exports.run = async (client, message, args) => {
-let guild = message.guild.id;   
-var prefix = ayarlar.prefix;
 
-  if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(`Bu komutu kullanabilmek için **Üyeleri Yasakla** iznine sahip olmalısın!`);
-  
-	let user = message.mentions.users.first() || message.client.users.cache.get(args[0]) || message.client.users.cache.find(m => m.username === args.slice(0).join(" ")) || message.author;
-  let reason = args.slice(1).join(' ');
-  
-  if (!user) return message.channel.send(`Komutu yanlış kullandınız örnek kullanım ==>a.ban <@Atacağınız kişi> <sebep>`);
-  if (user.id === message.author.id) return message.channel.send('Komutu yanlış kullandınız örnek kullanım a.ban <@atacağınız Kullanıcı> <sebep>.');
-  if (user.position > message.member.roles.highest.position) return message.channel.send(`Bu kullanıcının senin rollerinden/rolünden daha yüksek rolleri/rolü var.`);
-    if (!reason) reason = 'Belirtilmemiş.'
-    if (!user) return message.channel.send(`Etiketlediğin kullanıcıyı sunucuda bulamadım.`)
-    let member = message.guild.member(user)
-    if (!member) return message.channel.send(`Etiketlediğin kullanıcıyı sunucuda bulamadım.`)
+exports.run = async(client, message, args) => {
 
- if (!message.guild.member(user).bannable) return message.channel.send(`Bu kişiyi sunucudan yasaklayamıyorum çünkü \`benden daha yüksek bir role sahip\` ya da \`bana gerekli yetkileri vermedin\`.`);
+  //BYMAYFE YAPIP PAYLAŞMIŞTIR BABİ ÇALANLAR İZİN ALIRSA BENDEN PARDON İZİN ALIRSANIZ ÇALMIYORSUNUZ BENDEN İZİN ALIN HERHANGİ BİRYERDE PAYLAŞMAK İÇİN 
 
-   if (!message.guild.member(user).bannable) return message.channel.send('Sunucudaki yetkilileri yasaklayamam!');
+  var guild = message.guild;
+  var banlayan = message.author.tag;
+  let banxx = await message.guild.fetchBans();
+  if (!message.guild.me.permissions.has("BAN_MEMBERS")) return message.reply('Kullanıcıyı Banlayamıyorum Çünkü `Üyeleri Yasakla` Yetkim Yok.');
+  if (!message.member.hasPermission("BAN_MEMBERS")) return message.reply(":no_entry: Bu komutu kullanabilmek için `Üyeleri Yasakla` yetkisine sahip olmanız gerek.");
+ 
+  var kisi = message.mentions.users.first() || client.users.resolve(args[0]) || client.users.cache.find(u => u.username === args[0]) || client.users.cache.get(args[0]);
+  if(!kisi) return message.reply("Banlayacağım Kişiyi Belirtmen Gerekiyor `ID / @kullanici / username`")
+ var sebeb = args.slice(1).join(" ");
 
-  message.guild.members.ban(user.id)
-  message.channel.send(`<@${user.id}> **Adlı kullanıcı yasaklandı!** **Sebep: \`${reason}\`**`)
 
+    if(message.author == kisi) return message.reply("Kendini Yasaklayamazsın!")
+    if (banxx.get(kisi.id)) return message.reply(":x: Kişi Zaten Yasaklanmış!")
+
+ var now = new Date()
+ if (!sebeb) {
+         try {
+          kisi.send(`${kisi} **${guild}** adlı sunucudan banlandınız.`)
+          message.channel.send(`**${kisi} banlandı.**`)
+          guild.members.ban(kisi, { reason: sebeb/*, days: gun*/});
+        } catch (error) {
+          message.reply("Bir Sorun Oldu Lütfen Botun Geliştiricisi veya Yapımcısıyla İletişime Geçiniz!")
+          console.log(error)
+        }
+ } else {
+ try {
+   kisi.send(`${kisi} **${guild}** adlı sunucudan banlandınız. \nNedeni: **${sebeb}**`)
+   message.channel.send(`**${kisi} banlandı. \nNedeni: ${sebeb}**`)
+   guild.members.ban(kisi, { reason: sebeb/*, days: gun*/});
+ } catch (error) {
+   message.reply("Bir Sorun Oldu Lütfen Botun Geliştiricisi veya Yapımcısıyla İletişime Geçiniz!")
+   console.log(error)
+ }
+
+ }
 };
 
+
 exports.conf = {
-  aliases: ['yasakla'],
-  permLevel: 0,
-  kategori: 'Moderasyon',
+  aliases: [],
+  permLevel: 0
 };
 
 exports.help = {
   name: 'ban',
-  description: 'Belirttiğiniz kişiyi sunucudan yasaklar.',
-  usage: 'ban <@kullanıcı> <sebep>',
-
+  description: 'Etiketlediğiniz kullanıcıyı sunucudan atar'
 };
