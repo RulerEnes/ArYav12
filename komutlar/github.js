@@ -6,17 +6,17 @@ exports.run = async (bot, message, args) => {
 
   if (ghName.length < 2) {
     const lengtherr = new Discord.MessageEmbed()
-      .setColor('Red')
+      .setColor('#00f4fd')
       .setTitle('Error!')
-      .setDescription('Username is too short!')
+      .setDescription('Lütfen bir kullanıcı adı giriniz örnek kullanım \n a.Github ArYaSoftware')
 
     return message.channel.send(lengtherr)
   }
 
   const usernameerr = new Discord.MessageEmbed()
-    .setColor('Red')
+    .setColor('#00f4fd')
     .setTitle('Error!')
-    .setDescription('User was not found, try another username!')
+    .setDescription('Lütfen girdiğiniz Github Kullanıcısı doğru bir şekilde girdiğinizden emin olun')
 
   githubUser(`${ghName}`).then(user => {
     console.log(`Searched Github Profile | ${ghName} | ${user.name}`)
@@ -35,18 +35,13 @@ exports.run = async (bot, message, args) => {
     } else {
       var ghlocation = user.location
     }
-    if (user.mail == null) {
-      var ghmail = 'No Mail!'
-    } else {
-      var ghmail = user.mail
-    }
     if (user.bio == null) {
       var ghbio = 'No Bio!'
     } else {
       var ghbio = user.bio
     }
     const profile = new Discord.MessageEmbed()
-      .setColor('RANDOM')
+      .setColor('#00f4fd')
       .setTitle(`Github Profile`) // rexulec
       .setURL(`https://github.com/${ghName}`)
       .setAuthor(`${ghName}'s`, user.avatar_url, `https://github.com/${ghName}`)
@@ -64,29 +59,21 @@ exports.run = async (bot, message, args) => {
         value: ghlocation,
         inline: true
       }, {
-        name: 'Email',
-        value: ghmail,
-        inline: true
-      }, {
         name: 'Biography',
         value: ghbio,
         inline: true
       }, )
       .setTimestamp()
-      .setFooter(`Requested By ${message.author.tag}`, message.author.displayAvatarURL({
-        dynamic: true,
-        size: 4096,
-        format: 'png'
-      }));
+      .setFooter('© ArYa Software')
 
     message.channel.send(profile)
 
-  }).catch(err => message.channel.send(usernameerr));; // codare <3
+  }).catch(err => message.channel.send(usernameerr));;
 
 };
 
 exports.conf = {
-  aliases: ['github'],
+  aliases: ['github','GitHub','GİTHUB','GITHUB'],
   permLevel: 0,
   kategori: "Moderasyon",
 };
