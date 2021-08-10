@@ -79,7 +79,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'Github',
+  name: 'GithubEN',
   description: 'It throws the GitHub user information of the person you specify, do not tag, just type the github name'
 
 };
