@@ -19,6 +19,7 @@ exports.conf = {
 exports.help = {
   name: 'davet',
   description: 'ArYa botu sunucunuza davet etmek için bir link atar.',
+  cooldown: '5'
 
 
 };

@@ -35,6 +35,6 @@ exports.conf = {
 exports.help = {
   name: 'kick',
   description: 'Belirttiğiniz kişiyi sunucudan atar.',
-  usage: 'kick <@kullanıcı> <sebep>',
+  cooldown: '6'
  
 };

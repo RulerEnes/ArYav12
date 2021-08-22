@@ -36,7 +36,7 @@ message.channel.send(embed)
 
 }
 }catch{
-  message.channel.send(new Discord.MessageEmbed().setColor("#00f4fd").setDescription("Kullanıcıyı Bulamadım!"));
+  message.channel.send(new Discord.MessageEmbed().setColor("#00f4fd").setDescription("I couldn't find the user"));
   return;
 }
 
@@ -50,7 +50,7 @@ message.channel.send(embed)
 };
 
 exports.help = {
-  name: 'avatar',
-  description: 'Sizin veya başkasının profil resmini atar (GIF olsa bile)',
+  name: 'avatarEN',
+  description: 'Throws your or someone elses profile picture even if its a gif',
   cooldown: '5'
 };

@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
 
     // !aban ban <user> <reason> || !aban <user> <reason> || !aban <user> || !aban unban <user> || !aban liste || !aban sorgu
     const option = args[0];
-    const options = ['ban', 'unban', 'liste', 'sorgu'];
+    const options = ['ban', 'unban', 'liste', 'sorgu']
 
     const ban = async (user, reason) => {
         if (!message.guild.me.hasPermission('BAN_MEMBERS')) return error('Bu işlemi yapabilmek için yeterli yetkim yok.');

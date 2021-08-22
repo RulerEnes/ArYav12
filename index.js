@@ -4,6 +4,8 @@ const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
 const { Client, Util } = require('discord.js');
 require('./util/eventLoader.js')(client);
+
+client.cooldowns = new Discord.Collection()
 const fs = require('fs');
 const db = require('quick.db');
 const keep_alive = require('./keep_alive.js')
@@ -175,60 +177,3 @@ function exp(message) {
     }
 }
 });
-////DATABASE
-const qdb = require('quick.db');
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
-
-const sunucuadapter = new FileSync('./database/systems.json')
-
-const sdb = low(sunucuadapter)
-
-  sdb.defaults({mute: [], ban: [], kufurEngel: [], autorole: [], reklamEngel: [], security: [], counter: []})
-  .write()
-
-  sdb.read()
-
-/*
-client.on("message", async msg => {
-  if(!msg.guild) return;
-  
-  db.add(`mesajsayi_${msg.author.id}`, 1);
-});
-*/
-setInterval(function(){  
-  sdb.read()
- },1000);
-
-
- client.on('ready', async () => {
-  client.guilds.cache.forEach(async guild => {
-  guild.members.cache.forEach(async member => {
-  
-    sdb.read()
-    var muteverisi = sdb.get('mute').find({guild: guild.id, user: member.id}).value()
-  
-    if(muteverisi) {
-      var mutebitiszamani = muteverisi.finishtime
-      var mutekanali = muteverisi.channel
-    } else {
-      var mutebitiszamani = null;
-      var mutekanali = null;
-    }
-  const ainterval = setInterval(async function(){
-    sdb.read()
-  if(mutebitiszamani && mutebitiszamani !== null && mutebitiszamani !== "INFINITY") {
-    if(mutebitiszamani <= Date.now()) {
-      clearInterval(ainterval)
-      var muterole1 = qdb.fetch(`muteroluid_${guild.id}`);
-      var muterole2 = guild.roles.cache.find(r => r.id === muterole1);
-      if(member.roles.cache.has(muterole2.id)) await member.roles.remove(muterole2.id);
-      var mutekanali2 = guild.channels.cache.find(c => c.id === mutekanali);
-      if(mutekanali2) mutekanali2.send(`${member} Susturulması Açıldı!`)
-      sdb.get('mute').remove(sdb.get('mute').find({guild: guild.id, user: member.id}).value()).write()   
-    }
-  }
-  }, 6000)
-      })
-    })
-  });

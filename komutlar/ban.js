@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 
 exports.run = async(client, message, args) => {
 
-  //BYMAYFE YAPIP PAYLAŞMIŞTIR BABİ ÇALANLAR İZİN ALIRSA BENDEN PARDON İZİN ALIRSANIZ ÇALMIYORSUNUZ BENDEN İZİN ALIN HERHANGİ BİRYERDE PAYLAŞMAK İÇİN 
 
   var guild = message.guild;
   var banlayan = message.author.tag;

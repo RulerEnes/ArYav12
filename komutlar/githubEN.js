@@ -8,7 +8,7 @@ exports.run = async (bot, message, args) => {
     const lengtherr = new Discord.MessageEmbed()
       .setColor('#00f4fd')
       .setTitle('Error!')
-      .setDescription('Lütfen bir kullanıcı adı giriniz örnek kullanım \n a.Github ArYaSoftware')
+      .setDescription('Please enter a username \nExample usage =>a.github ArYaSoftware')
 
     return message.channel.send(lengtherr)
   }
@@ -16,7 +16,7 @@ exports.run = async (bot, message, args) => {
   const usernameerr = new Discord.MessageEmbed()
     .setColor('#00f4fd')
     .setTitle('Error!')
-    .setDescription('Lütfen girdiğiniz Github Kullanıcısı doğru bir şekilde girdiğinizden emin olun')
+    .setDescription('Please check the GitHub user you entered, there is no such user in the system')
 
   githubUser(`${ghName}`).then(user => {
     console.log(`Searched Github Profile | ${ghName} | ${user.name}`)
@@ -75,12 +75,11 @@ exports.run = async (bot, message, args) => {
 exports.conf = {
   aliases: ['github','GitHub','GİTHUB','GITHUB'],
   permLevel: 0,
-  kategori: "Moderasyon",
+  kategori: "Moderation",
 };
 
 exports.help = {
-  name: 'Github',
-  description: 'Belirttiğiniz kişinin Github bilgilerini atar.',
-  cooldown: '6'
+  name: 'GithubEN',
+  description: 'It throws the GitHub user information of the person you specify, do not tag, just type the github name'
 
 };

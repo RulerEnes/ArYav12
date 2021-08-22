@@ -10,8 +10,8 @@ exports.run = (client, message, args) => {
     if (result === undefined || result.length === 0) {
       message.channel.send(
         new Discord.MessageEmbed()
-          .setDescription("Lütfen bir yer gir.")
-          .setColor("RANDOM")
+          .setDescription("Please enter a location")
+          .setColor("#00f4fd")
       );
       return;
     }
@@ -21,21 +21,21 @@ exports.run = (client, message, args) => {
     const embed = new Discord.MessageEmbed()
       .setDescription(`**${current.skytext}**`)
       .setTitle(current.skytext
-      .replace(`Sunny`, `Güneşli`)
-      .replace(`Partly`, `Kısmen`)
-      .replace(`Mostly`, `Çoğunlukla`)
-      .replace(`Rain`, `Yağmurlu`)
-      .replace(`Light`, `Hafif`)
-      .replace(`Cloudy`, `Bulutlu`)
-      .replace(`Clear`, `Açık`))
-      .setAuthor(`${current.observationpoint} için hava durumu`)
+      .replace(`Sunny`, `Sunny`)
+      .replace(`Partly`, `Partl`)
+      .replace(`Mostly`, `Mostly`)
+      .replace(`Rain`, `Rainy`)
+      .replace(`Light`, `Light`)
+      .replace(`Cloudy`, `Cloudy`)
+      .replace(`Clear`, `Open`))
+      .setAuthor(`${current.observationpoint} weather for`)
       .setThumbnail('https://is.gd/bfhLNF')
       .setColor('#00f4fd')
-      .addField("Zaman Dilimi", `UTC${location.timezone}`, true)
-      .addField("Derece Türü", location.degreetype, true)
-      .addField("Sıcaklık", `${current.temperature} Derece`, true)
-      .addField("Hava", `${current.feelslike}`, true)
-      .addField("Rüzgar", current.winddisplay
+      .addField("Time period", `UTC${location.timezone}`, true)
+      .addField("Degree type", location.degreetype, true)
+      .addField("Heat", `${current.temperature} Derece`, true)
+      .addField("Weather", `${current.feelslike}`, true)
+      .addField("Wind", current.winddisplay
       .replace(`West`, `Batı`)
       .replace(`North`, `Kuzey`)
       .replace(`East`, `Doğu`)
@@ -44,10 +44,10 @@ exports.run = (client, message, args) => {
       .replace(`north`, `Kuzey`)
       .replace(`east`, `Doğu`)
       .replace(`south`, `Güney`), true)
-      .addField("Nem", `${current.humidity}%`, true)
-      .addField("En yüksek sıcaklık", tahminler[0].high, true)
-      .addField("En düşük sıcaklık", tahminler[0].low, true)
-      .addField("Nem", `${current.humidity}%`, true)
+      .addField("Moisture", `${current.humidity}%`, true)
+      .addField("Highest temperature", tahminler[0].high, true)
+      .addField("Lowest temperature", tahminler[0].low, true)
+      .addField("Moisture", `${current.humidity}%`, true)
       .setFooter('© ArYa Software');
     message.channel.send({ embed });
   });
@@ -56,12 +56,11 @@ exports.run = (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["hava-durumu", "hava"],
+  aliases: ["hava-durumu", "Weather"],
   permLevel: 0
 };
 
 exports.help = {
-  name: "havadurumu",
-  description: "Yazdığınız konumun hava durumunu atar",
-  cooldown: '6'
+  name: "weather-forecast",
+  description: "Assigns the weather for the location you typed in"
 };

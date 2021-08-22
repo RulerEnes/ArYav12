@@ -4,18 +4,18 @@ const yts = require('yt-search')
 exports.run = async (client, message, args) => { 
   
   const video = args.slice(0).join(' ')
-  if(!video) return message.channel.send("Youtube'de aramam için bir video adı girmelisin.")
+  if(!video) return message.channel.send("Enter a video name for me to search on YouTube")
   
   const r = await yts(video)
   const videos = r.videos.slice( 0, 1 )
   videos.forEach( function ( v ) {
     const views = String( v.views ).padStart( 10, ' ' )
     const yte = new discord.MessageEmbed()
- .setTitle(`${video} Adlı Video'nun  İstatistikleri`)
- .addField('İsim', `[${ v.title }](${ v.url })`)
- .addField('Kanal', `${ v.author.name }`)
- .addField('Görüntülenme', `${ views }`)
- .addField('Süre', `${ v. timestamp }`)
+ .setTitle(`${video} Statistics of the video`)
+ .addField('Name', `[${ v.title }](${ v.url })`)
+ .addField('Channel', `${ v.author.name }`)
+ .addField('viewing', `${ views }`)
+ .addField('duration', `${ v. timestamp }`)
  .setFooter('© ArYa Software')
  .setColor('#00f4fd')
  .setThumbnail(v.thumbnail)
@@ -25,10 +25,10 @@ exports.run = async (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["yt", "Youtube"], 
+  aliases: ["yt", "ytb"], 
   permLevel: 0
 };
 
 exports.help = {
-  name: 'Youtube'
+  name: 'youtube'
 };

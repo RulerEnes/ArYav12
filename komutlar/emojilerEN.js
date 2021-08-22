@@ -9,18 +9,18 @@ exports.run = async(client, msg, args) => {
         guild.emojis.cache.forEach((e) => {
             e.animated ? animEmotes.push(`<a:${e.name}:${e.id}>`) : staticEmotes.push(`<:${e.name}:${e.id}>`);
         });
-        staticEmotes = staticEmotes.length !== 0 ? `__**[${staticEmotes.length}] Normal Emoji**__\n${staticEmotes.join('')}` : '\n**Normal Emoji Bulunmuyor**';
-        animEmotes = animEmotes.length !== 0 ? `\n\n__**[${animEmotes.length}] Hareketli Emoji**__\n${animEmotes.join('')}` : '\n**Hareketli Emoji Bulunmuyor**';
+        staticEmotes = staticEmotes.length !== 0 ? `__**[${staticEmotes.length}] Regular Emoji**__\n${staticEmotes.join('')}` : '\n**No Regular Emojis**';
+        animEmotes = animEmotes.length !== 0 ? `\n\n__**[${animEmotes.length}] Animated Emoji**__\n${animEmotes.join('')}` : '\n**No Animated Emojis**';
         try {     
   let botembed = new Discord.MessageEmbed()
             .setColor(`#00f4fd`)
             .setDescription(staticEmotes + animEmotes)
-            .setAuthor(`${msg.guild.name} Sunucusunun Emojileri`, msg.guild.iconURL())
+            .setAuthor(`${msg.guild.name} Server's Emojis`, msg.guild.iconURL())
     .setFooter('© ArYa Software')           
         return msg.channel.send(botembed)
       } catch (err) {
         const embed = new Discord.MessageEmbed()
-            .addField(`Sunucuda Bulunan Emojiler`, 'Üzgünüm ama sunucunuzda ya çok fazla emoji bulunuyor ya da hiç emoji bulunmuyor. Bunları gösteremiyorum. Discord buna izin vermiyor.')
+            .addField(`Emojis Available on the Server`, 'Im sorry, but your server either has too many emojis or no emojis at all. I cant show them. Discord doesnt allow this ')
             .setColor('#00f4fd')
            .setFooter('© ArYa Software') 
             .setTimestamp()
@@ -30,14 +30,13 @@ exports.run = async(client, msg, args) => {
 }
 
 exports.conf = {
- aliases: ['emoji-liste'],
+ aliases: ['emoji-list'],
  permLevel: 0,
- kategori: 'Sunucu'
+ kategori: 'Guild'
 };
 
 exports.help = {
- name: 'emojiler',
- description: 'Sunucudaki tüm emojileri gösterir.',
+ name: 'emojis',
+ description: 'Shows all emojis on the server',
  cooldown: '6'
-
 };

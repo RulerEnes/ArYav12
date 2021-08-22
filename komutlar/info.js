@@ -29,5 +29,5 @@ exports.conf = {
 exports.help = {
   name: 'info',
   description: 'Botun bilgilerini English olarak verir',
-  usage: 'info'
+  cooldown: '6'
 };

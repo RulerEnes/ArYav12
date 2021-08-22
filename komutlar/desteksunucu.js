@@ -5,7 +5,7 @@ exports.run = async (client, message) => {
 
 
   const desteksunucu = new Discord.MessageEmbed()
-  .addField('ArYa Botun Destek Sunucusu','[ArYa Bota Oy Vermek İçin Tıkla](https://discord.gg/SNCWVbxpax)')
+  .addField('ArYa Botun Destek Sunucusu','[ArYa Bota Oy Vermek İçin Tıkla](https://discord.gg/vekyBAZ8QW)')
 message.channel.send(desteksunucu)
 
 };
@@ -19,6 +19,6 @@ exports.conf = {
 exports.help = {
   name: 'dsunucu',
   description: 'ArYa botun Destek Sunucusuna gelmeniz için davet atar',
-
+  cooldown: '5'
 
 };

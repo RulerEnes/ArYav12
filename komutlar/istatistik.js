@@ -25,7 +25,7 @@ exports.run = async (client, message, args) => {
     .addField("» **CPU**",`\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``,true)
     .addField("» **Bit**", `\`${os.arch()}\``, true)
     .addField("» **İşletim Sistemi**", `\`\`${os.platform()}\`\``, true)
-    .addField("» Linkler", `[Davet Et](https://discord.com/oauth2/authorize?client_id=834763013248122910&scope=bot&permissions=4228906239)` + "** | **" + `[Destek Sunucusu](https://discord.gg/SNCWVbxpax)` + "** | **" + `[Top.gg Oy](https://top.gg/bot/834763013248122910/vote)`, false)
+    .addField("» Linkler", `[Davet Et](https://discord.com/oauth2/authorize?client_id=834763013248122910&scope=bot&permissions=4228906239)` + "** | **" + `[Destek Sunucusu](https://discord.gg/vekyBAZ8QW)` + "** | **" + `[Top.gg Oy](https://top.gg/bot/834763013248122910/vote)`, false)
   return message.channel.send(istatistikler);
 };
 
@@ -39,5 +39,5 @@ exports.conf = {
 exports.help = {
   name: "istatistik",
   description: "Botun istatistiklerini gösterir",
-  usage: "istatistik"
+  cooldown: '5'
 };
