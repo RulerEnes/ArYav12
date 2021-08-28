@@ -26,8 +26,8 @@ exports.run = async (client, message, args) => {
 
             const banID = database.add(`acilmayanBanID_${message.guild.id}`, 1);
 
-            user.send(new Discord.MessageEmbed().setColor('RED').setDescription(`> (#${banID}) **${message.guild.name}** adlı sunucudan banlandınız. Sebep: **${reason}**`));
-            message.channel.send(new Discord.MessageEmbed().setColor('RED').setDescription(`> (#${banID}) **${user.tag}** kişisine açılmayan ban atıldı. Sebep: **${reason}**`));
+            user.send(new Discord.MessageEmbed().setColor('#00f4fd').setDescription(`> (#${banID}) **${message.guild.name}** adlı sunucudan banlandınız. Sebep: **${reason}**`));
+            message.channel.send(new Discord.MessageEmbed().setColor('#00f4fd').setDescription(`> (#${banID}) **${user.tag}** kişisine açılmayan ban atıldı. Sebep: **${reason}**`));
             message.guild.members.ban(user, { reason });
             database.push(`acilmayanBan.laura.${message.guild.id}`, { id: banID, executor, user, reason, time: new Date() });
         } catch (err) {

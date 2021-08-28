@@ -21,7 +21,7 @@ if (user.position > message.member.roles.highest.position) return message.channe
 
    if (!message.guild.member(user).bannable) return message.channel.send('Sunucudaki yetkilileri atamam!');
     message.guild.member(user).kick(reason);
-message.channel.send(`<@${user.id}> **Adlı kullanıcı sunucudan atıldı!** **Sebep: \`${reason}\``)
+message.channel.send(`<@${user.id}> **Adlı kullanıcı sunucudan atıldı!** **Sebep: \`${reason}\`**`)
 
 
 };

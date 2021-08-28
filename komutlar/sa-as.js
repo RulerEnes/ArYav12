@@ -30,7 +30,7 @@ exports.run = async (bot, message, args) => {
 
         db.set(`saas_${message.guild.id}`, 'acik')
 
-        message.channel.send(`Şuandan İtibaren Selam Verenlerin Selamı **Alıncaktır**.!`)
+        message.channel.send(`**Şuandan İtibaren Selam Verenlerin Selamı Alıncaktır**.!`)
 
     }
 
