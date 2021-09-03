@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
  .addField('Kanal', `${ v.author.name }`)
  .addField('Görüntülenme', `${ views }`)
  .addField('Süre', `${ v. timestamp }`)
- .setFooter('© ArYa Software')
+ .setFooter('© SyntaxSoftware.Net')
  .setColor('#00f4fd')
  .setThumbnail(v.thumbnail)
     message.channel.send(yte)

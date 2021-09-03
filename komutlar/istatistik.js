@@ -8,10 +8,11 @@ exports.run = async (client, message, args) => {
     .format(" D [gün], H [saat], m [dakika], s [saniye]");
   const istatistikler = new Discord.MessageEmbed()
     .setTitle("ArYa Botun İstatistikleri")
-    .setThumbnail("https://is.gd/bfhLNF")
+    
+    .setThumbnail("https://images.app.goo.gl/p54QzHcbFhoBeHsk6")
     .setColor("#00f4fd")
-    .setFooter("© ArYa Software",)
-    .addField("» **Botun Sahibi**", "<@799012176257482753>")
+    .setFooter("© SyntaxSoftware.Net",)
+    .addField("» **Botun Sahibi - Geliştirici**", "<@799012176257482753>")
     .addField("» **Gecikme süreleri**","Mesaj Gecikmesi: {ping1} ms \nBot Gecikmesi: {ping2} ms"
         .replace("{ping1}", new Date().getTime() - message.createdTimestamp)
         .replace("{ping2}", client.ws.ping),true)
@@ -37,7 +38,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "istatistik",
-  description: "Botun istatistiklerini gösterir",
-  cooldown: '5'
+  "name": "istatistik",
+  "description": "Botun istatistiklerini gösterir",
+  "cooldown": 5,
 };

@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 exports.run = (client, message, params) => {
     if(message.author.id === message.guild.owner.id) {
       
-            message.channel.send(new Discord.MessageEmbed().setColor('#00f4fd').setTitle('Komut girişi').setDescription('Gerekli Dosyalar Kurulsun mu?.').setFooter('Bu eylemi onaylıyorsan "evet" yazman yeterlidir.Bu eylem 30 saniye içinde sona erecek'))
+            message.channel.send(new Discord.MessageEmbed().setColor('#00f4fd').setTitle('Komut girişi').setDescription('Gerekli Dosyalar Kurulsun mu?.').setFooter('Bu eylemi onaylıyorsan **"evet"** yazman yeterlidir.Bu eylem 30 saniye içinde sona erecek'))
 .then(() => {
 message.channel.awaitMessages(response => response.content === 'evet', {
 max: 1,

@@ -47,7 +47,7 @@ exports.run = async (bot, message, args) => {
     let embed = new MessageEmbed()
     .setThumbnail(`http://colorhexa.com/${hex}.png`)
     .setColor('#00f4fd')
-    .setFooter(`© ArYa Software`)
+    .setFooter(`© SyntaxSoftware.Net`)
     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
     .addField(`Rol Bilgileri`,`**ID:** ${asıl.id}\n**Adı:** ${asıl.name}\n**Renk Kodu:** ${asıl.hexColor.toUpperCase()}\n**Sıralaması:** ${asıl.rawPosition ? asıl.rawPosition : '1'}/${message.guild ? message.guild.roles.cache.size : '1'}\n**Etiketlenebilir mi?:** ${asıl.mentionable ? 'Evet' : 'Hayır'}`)
     .addField(`Role Sahip Kullanıcılar (${asıl.members.size})`, `${!rolüyeler ? 'Bu role sahip kimse bulunmuyor.' : rolüyeler}`)

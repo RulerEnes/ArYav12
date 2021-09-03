@@ -35,7 +35,7 @@ moment.locale('tr-TR');
       .setThumbnail("https://is.gd/bfhLNF")
       .setColor('#00f4fd')
       .addField('Üye bilgisi:',`**Kullanıcı İsmi:** ${member.displayName}\n**Katılım Tarihi:** ${moment.utc(member.joinedAt).format('Do MMMM YYYY')} - ${checkDays(member.joinedAt)} \n**Rolleri:** ${member.roles.cache.sort((b, a) => { return a.position - b.position }).map(role => `${role}`).join(" | ")}`, false)        .addField('Kullanıcı bilgisi:',  `\n**Tag**: ${member.user.tag}\n**ID:** ${member.user.id}\n**Kuruluş Tarihi**: ${moment.utc(user.createdAt).format('Do MMMM YYYY')} - ${checkDays(user.createdAt)}`, false)
-      .setFooter("© ArYa Software","https://is.gd/bfhLNF")      
+      .setFooter("© SyntaxSoftware.Net")      
      return message.channel.send(embed)
                                 
         }

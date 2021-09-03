@@ -45,7 +45,7 @@ let sunucu = new Discord.MessageEmbed()
 .addField(`Üye Bilgileri `, `Toplam Üye: **${humanCount}** \nToplam Bot: **${botCount}** \nRol Sayısı: **${guild.roles.cache.size}**`)
 .addField(`Kanallar`, ` Yazı: **${msg.guild.channels.cache.filter(c => c.type === 'text').size}** \n Sesli: **${msg.guild.channels.cache.filter(c => c.type === 'voice').size}** \n Kategori: **${msg.guild.channels.cache.filter(c => c.type === 'category').size}**`)
 .setColor('#00f4fd')
-.setFooter('© ArYa Software')
+.setFooter('© SyntaxSoftware.Net')
         return yukleniyor.edit('', sunucu);
 
 }; 

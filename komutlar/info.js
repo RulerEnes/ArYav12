@@ -15,7 +15,7 @@ exports.run = (client, message, args) => {
         { name: ':shield: Guild Count', value: client.guilds.cache.size, inline: true }, // Olduğu sunucu sayısı
         { name: ':police_officer: Users', value: client.users.cache.size + ' People!', inline: true }, // Kullanıcı sayısı
       )
-      .setFooter('© ArYa Software',); // Alttaki footer fotoğrafo
+      .setFooter('© SyntaxSoftware.Net',); // Alttaki footer fotoğrafo
 
     message.channel.send(info); //Mesajı gönderir.
 };

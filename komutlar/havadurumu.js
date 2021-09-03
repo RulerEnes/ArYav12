@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
       message.channel.send(
         new Discord.MessageEmbed()
           .setDescription("Lütfen bir yer gir.")
-          .setColor("RANDOM")
+          .setColor("#00f4fd")
       );
       return;
     }
@@ -48,7 +48,7 @@ exports.run = (client, message, args) => {
       .addField("En yüksek sıcaklık", tahminler[0].high, true)
       .addField("En düşük sıcaklık", tahminler[0].low, true)
       .addField("Nem", `${current.humidity}%`, true)
-      .setFooter('© ArYa Software');
+      .setFooter('© SyntaxSoftware.Net');
     message.channel.send({ embed });
   });
 };

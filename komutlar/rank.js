@@ -40,7 +40,7 @@ exports.conf = {
 
     guildOnly: false,
 
-    aliases: [''],
+    aliases: ['level','seviye'],
 
     permLevel: 0
 

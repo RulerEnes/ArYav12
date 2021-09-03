@@ -5,15 +5,15 @@ exports.run = (Bot, Mesaj, Argüman) => {
   const Hata = new MessageEmbed()
     .setColor("#FF0000")
     .setTitle("Hata!")
-    .setFooter("© ArYa Software")
+    .setFooter("© SyntaxSoftware.Net")
 
   const Başarılı = new MessageEmbed()
     .setColor("#00f4fd")
     .setTitle("Başarılı!")
-    .setFooter("© ArYa Software")
+    .setFooter("© SyntaxSoftware.Net")
   {
     if (!Mesaj.member.hasPermission("MANAGE_MESSAGES")) {
-      Hata.setDescription("Bu komutu kullanmak için `Mesajları Yönet` yetkisine sahip olmanız gerekmektedir.");
+      Hata.setDescription("Bu komutu kullanmak için **Mesajları Yönet** yetkisine sahip olmanız gerekmektedir.");
       Mesaj.channel.send(Hata).then(msg => msg.delete(5000));
       
     } else {

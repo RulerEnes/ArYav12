@@ -16,13 +16,13 @@ exports.run = async(client, msg, args) => {
             .setColor(`#00f4fd`)
             .setDescription(staticEmotes + animEmotes)
             .setAuthor(`${msg.guild.name} Sunucusunun Emojileri`, msg.guild.iconURL())
-    .setFooter('© ArYa Software')           
+    .setFooter('© SyntaxSoftware.Net')           
         return msg.channel.send(botembed)
       } catch (err) {
         const embed = new Discord.MessageEmbed()
             .addField(`Sunucuda Bulunan Emojiler`, 'Üzgünüm ama sunucunuzda ya çok fazla emoji bulunuyor ya da hiç emoji bulunmuyor. Bunları gösteremiyorum. Discord buna izin vermiyor.')
             .setColor('#00f4fd')
-           .setFooter('© ArYa Software') 
+           .setFooter('SyntaxSoftware.Net') 
             .setTimestamp()
         msg.channel.send(embed)
                               

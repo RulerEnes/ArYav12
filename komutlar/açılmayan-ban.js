@@ -93,7 +93,7 @@ exports.run = async (client, message, args) => {
                 { name: `Moderatör`, value: `${ban.executor.tag}`, inline: true },
                 { name: `Üye`, value: `${ban.user.tag}`, inline: true },
                 { name: `Sebep`, value: `${ban.reason}`, inline: true }
-            ).setFooter(`© ArYa Software`);
+            ).setFooter(`© SyntaxSoftware.Net`);
 
         message.channel.send(infoEmbed);
     };

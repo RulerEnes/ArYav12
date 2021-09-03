@@ -64,7 +64,7 @@ exports.run = async (bot, message, args) => {
         inline: true
       }, )
       .setTimestamp()
-      .setFooter('© ArYa Software')
+      .setFooter('© SyntaxSoftware.Net')
 
     message.channel.send(profile)
 

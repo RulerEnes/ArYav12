@@ -16,7 +16,7 @@ exports.run = async(client, message, args) => {
   .setTitle('İşlem Başarılı!')
   .setDescription('Seviye log kanalı ayarlandı.Üyeler seviye atlayınca orda belirteceğim.')
   .addField('Seviye Log Kanalı:', kanals, true)
-  .setFooter('© ArYa Software')
+  .setFooter('© SyntaxSoftware.Net')
   .setColor('#00f4fd')
   message.channel.send(codare)
   

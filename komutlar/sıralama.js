@@ -68,7 +68,7 @@ module.exports.conf = {
 
   guildOnly: false, 
 
-  aliases: ['top20',], 
+  aliases: ['top20','top','Top'], 
 
   permLevel: 0
 

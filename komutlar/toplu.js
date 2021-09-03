@@ -10,6 +10,7 @@ exports.run = async (client, message) => {
   .addField('ArYa Botun Davet Linki','[ArYa Botu Davet Et](https://discord.com/oauth2/authorize?client_id=834763013248122910&scope=bot&permissions=4228906239)')
   .addField('ArYa Botun YouTube Kanalı','[ArYa Botun Youtube Kanalı](https://youtube.com/channel/UCGFHvBFK1mJTgH9bJq6SpAQ)')
   .addField('ArYa Botun Twitter Hesabı','[ArYa Botun Twitter Hesabı](https://twitter.com/SoftwareArya?s=09)')
+  .setColor("#00f4fd")
 message.channel.send(bot)
 
 };

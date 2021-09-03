@@ -26,7 +26,7 @@ exports.run = async(client, message, args) => {
   .setTitle(' | Aktif Edildi!')
   .setDescription(message.guild.name + ' Sunucusuna başarıyla seviye sistemini aktifleştirdim!\n Genel ayarlar aşağıda veriliyor..')
   .addField('Seviye Log Kanalı:', kontrol, true)
-  .setFooter('© ArYa Software')
+  .setFooter('© SyntaxSoftware.Net')
   .setColor('#00f4fd')
   message.channel.send(codare)
  
