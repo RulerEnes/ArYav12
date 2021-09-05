@@ -5,7 +5,7 @@ exports.run = async (client, message) => {
 
 
   const desteksunucu = new Discord.MessageEmbed()
-  .addField('ArYa Botun Destek Sunucusu','[ArYa Bota Oy Vermek İçin Tıkla](https://discord.gg/vekyBAZ8QW)')
+  .addField('ArYa Botun Destek Sunucusu','[ArYa Botun Destek Sunucusuna Gelmek İçinTıkla](https://discord.gg/vekyBAZ8QW)')
 message.channel.send(desteksunucu)
 
 };
